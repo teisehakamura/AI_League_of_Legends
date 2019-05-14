@@ -10,9 +10,9 @@ flags.DEFINE_string("filename", "LOL_data.npy", "Please write down the name of n
 flags.DEFINE_integer("width", 224, "Width")
 flags.DEFINE_integer("height", 224, "Height")
 flags.DEFINE_integer("number_of_class", 3, "How many classes do you have?")
-flags.DEFINE_integer("training_epoch", 1000, "epoch")
+flags.DEFINE_integer("training_epoch", 4000, "epoch")
 flags.DEFINE_integer("batch_size", 32, "batch_size")
-flags.DEFINE_string("TB_CP", "./log", "tensorboard and checkpoint")
+flags.DEFINE_string("TB_CP", "./logs", "tensorboard and checkpoint")
 
 
 FLAGS = flags.FLAGS
@@ -139,18 +139,38 @@ def main(_):
 	saver = tf.train.Saver()
 	checkpoint = tf.train.get_checkpoint_state(FLAGS.TB_CP)
 	#load model
-	# if checkpoint and checkpoint.model_checkpoint_path:
-	# 	try:
-	# 		saver.restore(sess, checkpoint.model_checkpoint_path)
-	# 		print("Sucessfully loaded:", checkpoint.model_checkpoint_path)
-	# 		print("accuracy", model.get_accuracy(x_eval, y_eval))
-	# 	except:
-	# 		print("Error")
-	# else:
-	# 	print("Coundn't find it")
+	if checkpoint and checkpoint.model_checkpoint_path:
+		try:
+			saver.restore(sess, checkpoint.model_checkpoint_path)
+			print("Sucessfully loaded:", checkpoint.model_checkpoint_path)
+			print("accuracy", model.get_accuracy(x_eval, y_eval))
+		except:
+			print("Error")
+	else:
+		print("Coundn't find it")
+
+	#early_stopping
+	patience = 10
+	min_delta = 0.01
+	patience_cnt = 0
+	early_stopping = []
 
 	for epoch in range(FLAGS.training_epoch):
 		train_cost, train_opt, n_batch = 0,0,0
+
+		patience = 10
+		min_delta = 0.01
+		patience_cnt = 0
+
+		if epoch > 0 and hist_loss[epoch-1] - hist_loss[epoch] > min_delta:
+			patience_cnt = 0
+
+		else:
+			patience_cnt += 1
+
+		if patience_cnt > patience:
+			print("early stopping...")
+			break
 
 		for x_train_batch, y_train_batch in batch_function(x_train, y_train, FLAGS.batch_size):
 			cost, acc, summary = model.train(x_train_batch, y_train_batch)
@@ -162,6 +182,23 @@ def main(_):
 		saver.save(sess, FLAGS.TB_CP + "/model", global_step= global_step)
 		print("avg cost:", np.sum(train_cost)/ n_batch)
 		print("accuracy:", model.get_accuracy(x_eval, y_eval))
+
+	#early stopping
+		avg_cost = np.sum(train_cost)/ n_batch
+		early_stopping.append(avg_cost)
+		if epoch == 0:
+			pass
+
+		elif epoch > 0 and early_stopping[epoch-1] - early_stopping[epoch] > min_delta:
+			patience_cnt = 0
+
+		else:
+			patience_cnt += 1
+
+		if patience_cnt > patience:
+			print("early stopping...")
+			break
+
 	print("End")
 	
 if __name__ == "__main__":
