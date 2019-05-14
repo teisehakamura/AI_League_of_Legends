@@ -49,7 +49,13 @@ I respectively save 500 images of Tower, Minion, and Ezreal on League of Legends
 
 `python model.py`
 
-5. Tensorflow Object Detection API might be used to detect ezreal, tower, and minion
+5. I used early-stopping with patience = 5 and made the model stopped actumatically
+
+
+![10](./git/10.png)
+
+
+6. To make the box on the picture, ImageGrab on Pillow and Tensorflow Object Detection API might be used to detect ezreal, tower, and minion
 
 # epoch = 1000
 
