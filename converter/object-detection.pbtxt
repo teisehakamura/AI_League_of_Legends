@@ -1,0 +1,13 @@
+item {
+  id: 1
+  name: 'tower'
+}
+item {
+  id: 2
+  name: 'minion'
+}
+item {
+  id: 3
+  name: 'ezreal'
+}
+
