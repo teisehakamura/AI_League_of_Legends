@@ -7,7 +7,7 @@
 - Used cv2 to take each 500 pictures
 - Saved those pictures with np.save(The size of .npy is 233.1 mb)
 
-![Screen Shot 2019-05-15 at 1.30.52](./git/Screen Shot 2019-05-15 at 1.30.52.png)
+![1](./git/1.png)
 
 2. Model - Used AWS to use GPU that has p2.x2large to operate model. I have used 3500 epochs
 
