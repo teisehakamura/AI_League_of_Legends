@@ -45,15 +45,12 @@ I respectively save 500 images of Tower, Minion, and Ezreal on League of Legends
 
 `python tf_load_image.py --filename LOL_data.npy`
 
-4. To create a model, you might use model.py that has CNN mode(I used early-stopping with patience = 5 and made the model stopped actumatically)
+4. To create a model, you might use model.py that has CNN mode(I used early-stopping with patience = 5 and made the model stopped actumatically, also made use of Dataset API)
 
 `python model.py`
 `python prediction.py`
 
-5. I used early-stopping with patience = 5 and made the model stopped actumatically
-
-
-6. To make the box on the picture, ImageGrab on Pillow and Tensorflow Object Detection API might be used to detect ezreal, tower, and minion
+5. To make the box on the picture, ImageGrab on Pillow and Tensorflow Object Detection API might be used to detect ezreal, tower, and minion
 
 # epoch = 1000
 
