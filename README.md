@@ -7,7 +7,7 @@
 I respectively save 500 images of Tower, Minion, and Ezreal on League of Legends (Total 3 classes)
 - Used parser or tf.run.flags to insert width, height, and filename
 - Used cv2 to take each 500 pictures
-- Saved those pictures with np.save(The size of .npy is 233.1 mb)
+- Saved those pictures with np.save(The size of .npy is 233.4 mb)
 
 ![1](./git/1.png)
 
