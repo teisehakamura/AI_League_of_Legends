@@ -49,5 +49,16 @@ I respectively save 500 images of Tower, Minion, and Ezreal on League of Legends
 
 `python model.py`
 
+5. Tensorflow Object Detection API might be used to detect ezreal, tower, and minion
+
+# epoch = 1000
+
+![9](./git/9.png)
+
+# epoch = 3540
+
+![8](./git/8.png)
+
+
 
 
