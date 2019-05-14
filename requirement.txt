@@ -1,0 +1,5 @@
+tensorflow
+argparse
+pillow
+numpy==1.13
+sklearn
