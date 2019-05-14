@@ -2,22 +2,26 @@
 
 # Explaination (Classification and Object Detection)
 
-1. I respectively save 500 images of Tower, Minion, and Ezreal on League of Legends (Total 3 classes)
+# 1. Images
+
+I respectively save 500 images of Tower, Minion, and Ezreal on League of Legends (Total 3 classes)
 - Used parser or tf.run.flags to insert width, height, and filename
 - Used cv2 to take each 500 pictures
 - Saved those pictures with np.save(The size of .npy is 233.1 mb)
 
 ![1](./git/1.png)
 
-2. Model - Used AWS to use GPU that has p2.x2large to operate model. I have used 3540 epochs on GPU based on Object Detection.
+# 2. Model 
+
+:Used AWS to use GPU that has p2.x2large to operate model. I have used 3540 epochs on GPU based on Object Detection.
 
 ![4](./git/4.png)
 
-3. Tensorboard(the function of early stopping is in the file, model.py) 
+# 3. Tensorboard(the function of early stopping is in the file, model.py) 
 
 ![5](./git/5.png)
 
-4. Result
+# 4. Result
 
 ![8](./git/8.png)
 
