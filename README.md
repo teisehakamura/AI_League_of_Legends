@@ -1,6 +1,4 @@
-# Incubit_Project-AI_League_Of_Legends-
-
-# Contents - Shooting "Auto Q skills" on the enemy on Image Recognition
+# Shoot "Auto Q skills" on the enemy on Image Recognition
 
 Based on the image recognition, the model that I create with 1,500 pictures is able to detect the enemy on League of Legends and makes ezreal shot "Q" to the enemy on the coordinate of x and y axis. 
 
