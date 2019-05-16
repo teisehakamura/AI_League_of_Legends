@@ -23,7 +23,7 @@ I respectively save 500 images of Tower, Minion, and Ezreal on League of Legends
 
 # 4. Result
 
-<iframe width="640" height="360" src="https://www.youtube.com/embed/6Az2cNU7gUw" frameborder="0" gesture="media" allowfullscreen=""></iframe>
+[![Watch the video](https://www.youtube.com/embed/6Az2cNU7gUw)](https://www.youtube.com/embed/6Az2cNU7gUw)
 
 
 
@@ -57,7 +57,6 @@ I respectively save 500 images of Tower, Minion, and Ezreal on League of Legends
 `python controller.py`
 
 
-<iframe width="640" height="360" src="https://www.youtube.com/watch?v=qrJkvGzGvkE&feature=youtu.be" frameborder="0" gesture="media" allowfullscreen=""></iframe>
-
+[![Watch the video](https://www.youtube.com/embed/6Az2cNU7gUw)](https://www.youtube.com/embed/6Az2cNU7gUw)
 
 
