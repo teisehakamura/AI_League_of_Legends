@@ -23,7 +23,7 @@ I respectively save 500 images of Tower, Minion, and Ezreal on League of Legends
 
 # 4. Result
 
-![8](./git/8.png)
+
 
 
 
@@ -52,13 +52,9 @@ I respectively save 500 images of Tower, Minion, and Ezreal on League of Legends
 
 5. To make the box on the picture, ImageGrab on Pillow and Tensorflow Object Detection API might be used to detect ezreal, tower, and minion
 
-# epoch = 1000
+6. To detect and controll ezreal automatically, you might use contoller.py
 
-![9](./git/9.png)
-
-# epoch = 3540
-
-![8](./git/8.png)
+`python controller.py`
 
 
 
